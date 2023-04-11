@@ -8,6 +8,10 @@
     <title>Inscrit</title>
 </head>
 <body>
+    <?php
+    include("header.php");
+    ?>
+
     <h1>Merci !</h1>
     <h2>Votre inscription a bien été enregistrée</h2>
 
@@ -21,10 +25,13 @@
         
         $nom = $_REQUEST['nom'];
         $prenom = $_REQUEST['prenom'];
+        $age = $_REQUEST['age'];
         $mdp = $_REQUEST['mdp'];
+        $emdp = password_hash($mdp, PASSWORD_DEFAULT);
 
-        $sql = $bdd->prepare("INSERT INTO utilisateur (nom, prenom, mdp) VALUES (?,?,?)"); //prepare ta requête
-        $sql->execute(array($nom,$prenom, $mdp));
+        $sql = $bdd->prepare("INSERT INTO utilisateur (nom, prenom, age, mdp) VALUES (?,?,?,?)"); //prepare ta requête
+        $sql->execute(array($nom,$prenom,$age,$emdp));
 
         echo "Vos données ont bien été transmises";
     }
+?>
