@@ -15,3 +15,10 @@ Etapes pour installer les fichiers :
 5. Dans l'éditeur de code, ouvrir le dossier qui contient le code source
 6. Lancer l'émulateur PHP
 7. Dans votre navigateur préféré, entrer localhost/ suivi du nom du dossier dans l'URL
+
+
+Version : 
+
+PHP 8.0.26
+MySQL 8.0.31
+PhpMyAdmin 5.2.0
