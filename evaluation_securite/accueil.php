@@ -8,7 +8,7 @@
     <title>Accueil</title>
 </head>
 <body>
-    
+
     <?php
     include("header.php");
     ?>

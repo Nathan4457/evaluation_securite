@@ -56,12 +56,12 @@ body {
 
 /* Modification des inputs number pour la date de naissance */
 
-#age {
+#email {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.age input {
+.email input {
     margin-bottom: 5px;
 }
 

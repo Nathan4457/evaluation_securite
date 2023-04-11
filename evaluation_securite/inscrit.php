@@ -25,12 +25,12 @@
         
         $nom = $_REQUEST['nom'];
         $prenom = $_REQUEST['prenom'];
-        $age = $_REQUEST['age'];
+        $email = $_REQUEST['email'];
         $mdp = $_REQUEST['mdp'];
         $emdp = password_hash($mdp, PASSWORD_DEFAULT);
 
-        $sql = $bdd->prepare("INSERT INTO utilisateur (nom, prenom, age, mdp) VALUES (?,?,?,?)"); //prepare ta requête
-        $sql->execute(array($nom,$prenom,$age,$emdp));
+        $sql = $bdd->prepare("INSERT INTO utilisateur (nom, prenom, email, mdp) VALUES (?,?,?,?)"); //prepare ta requête
+        $sql->execute(array($nom,$prenom,$email,$emdp));
 
         echo "Vos données ont bien été transmises";
     }

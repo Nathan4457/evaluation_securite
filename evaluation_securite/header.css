@@ -17,6 +17,12 @@ header a {
     margin-top: 13px;
 }
 
+header a:hover {
+    transform: translateY(-2px);
+    transition-duration: 1s;
+    color: black;
+}
+
 #accueil {
     float: left;
     margin-left: 20px;

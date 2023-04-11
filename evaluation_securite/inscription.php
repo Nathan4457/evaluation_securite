@@ -20,12 +20,12 @@
 
             <label id="lab_prenom" for="prenom">Prénom</label>
             <input placeholder="Prénom" id="prenom" type="text"name="prenom" >
-
-            <div class="Age">
-                <label id="lab_naissance" for="age">Age</label>
-                    <input type="number" placeholder="Age" id="age" name="age">
-            </div>
             
+            <div class="email">
+                <label id="lab_email" for="email">Mot de passe</label>
+                    <input type="text" placeholder="Adresse mail" id="email" name="email">
+            </div>
+
             <div class="mdp">
                 <label id="lab_mdp" for="mdp">Mot de passe</label>
                     <input type="password" placeholder="Mot de passe" id="mdp" name="mdp">
