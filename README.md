@@ -19,6 +19,6 @@ Etapes pour installer les fichiers :
 
 Version : 
 
-PHP 8.0.26
-MySQL 8.0.31
-PhpMyAdmin 5.2.0
+PHP 8.0.26 ;
+MySQL 8.0.31 ;
+PhpMyAdmin 5.2.0 ;
