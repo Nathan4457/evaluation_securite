@@ -42,18 +42,26 @@
                     $email = $_REQUEST['email'];
                     $mdp = $_REQUEST['mdp'];
                     $emdp = password_hash($mdp, PASSWORD_DEFAULT);
+                    $datecreation = date("Y-m-d");
 
                     require("configconnexion.php");
 
-                    $sql = $bdd->prepare("INSERT INTO utilisateur (nom, prenom, email, mdp) VALUES (?,?,?,?)"); //prepare ta requête
-                    $sql->execute(array($nom, $prenom, $email, $emdp));
+                    $sql = $bdd->prepare("SELECT COUNT(*) FROM utilisateur WHERE email = ?");
+                    $sql->execute(array($email));
+                    $compteur = $sql->fetchColumn();
 
-                    header("Refresh: 3; url=connexion.php");
-                    echo "<p>Vous vous êtes enregistré avec succès !<br/>
-                    Vous allez maintenant être redirigé vers la page de connexion<p>";
-
+                    if ($compteur > 0) {
+                        echo "<p>Cet e-mail existe déjà dans notre base de données.</p>";
+                    } else {
+                        $sql = $bdd->prepare("INSERT INTO utilisateur (nom, prenom, email, mdp, date_creation) VALUES (?,?,?,?,?)");
+                        $sql->execute(array($nom, $prenom, $email, $emdp, $datecreation));
+                        header("Refresh: 3; url=connexion.php");
+                        echo "<p>Vous vous êtes enregistré avec succès !<br/>
+                        Vous allez maintenant être redirigé vers la page de connexion</p>";
+                    }
                 }
                 ?>
+
             </div>
         </div>
     </form>

@@ -18,7 +18,6 @@
         echo '<a href="deconnecte.php">Déconnexion</a>';
         echo '<a href="blog.php">Blog</a>';
 
-        
     } else{
         echo '<a href="inscription.php">Inscription</a>';
         echo '<a href="connexion.php">Connexion</a>';

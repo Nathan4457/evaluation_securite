@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -30,11 +29,11 @@
                 <?php
 
                 if (isset($_SESSION['nb_tentatives']) && $_SESSION['nb_tentatives'] >= 3) {
-                    $duree_attente = 60; 
-                    $temps_ecoule = time() - $_SESSION['timestamp']; 
+                    $duree_attente = 60;
+                    $temps_ecoule = time() - $_SESSION['timestamp'];
                     if ($temps_ecoule < $duree_attente) {
                         $attente_restante = $duree_attente - $temps_ecoule;
-                        echo "<p>Vous avez atteint le nombre maximum de tentatives. Veuillez réessayer dans ".$attente_restante." secondes.</p>";
+                        echo "<p>Vous avez atteint le nombre maximum de tentatives. Veuillez réessayer dans " . $attente_restante . " secondes.</p>";
                         exit();
                     } else {
                         $_SESSION['nb_tentatives'] = 0;
@@ -45,11 +44,16 @@
                     require("configconnexion.php");
                     $email = $_POST['email'];
                     $mdp = $_POST['mdp'];
+                    $derniereconnexion = date("Y-m-d");
+
+
                     $sql = $bdd->prepare("SELECT * FROM utilisateur WHERE email = ?");
                     $sql->execute(array($email));
                     $result = $sql->fetch();
                     if ($result && password_verify($mdp, $result['mdp'])) {
                         $_SESSION['connecte'] = true;
+                        $sql = $bdd->prepare('UPDATE utilisateur SET derniere_connexion = ? WHERE email = ?');
+                        $sql->execute(array($derniereconnexion, $email));
                         echo "<p>Vous êtes connecté !</p>";
                         echo "<p>Vous allez être redirigé vers la page d'accueil !</p>";
                         header("Refresh: 3; url=index.php");
