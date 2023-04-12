@@ -7,7 +7,7 @@ Principe de l'application :
 
 L'application consiste à enregistrer un utilisateur dans une base de données depuis un formulaire, puis lui permettre de se connecter en vérifiant
 que toutes les informations saisies correspondent à celles enregistrées dans la base de données. L'utilisateur pourra naviguer avec le statut "connecté" grâce 
-à la fonction session_start(). Enfin, l'utilisateur pourra se déconnecter et cela fermera la session.
+à la fonction session_start(). Il pourra également Poster un article de blog si il est connecté. Enfin, l'utilisateur pourra se déconnecter et cela fermera la session.
 
 
 Etapes pour installer les fichiers :
