@@ -1,5 +1,11 @@
-<?php require("header.php"); ?>
+<?php require("header.php");
 
+if (isset($_SESSION['connecte']) && $_SESSION['connecte'] == true) {
+    echo "Bienvenue dans le blog !";
+} else {
+    header("location:index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,11 +14,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
-    <title>Accueil</title>
+    <title>Blog</title>
 </head>
 
 <body>
-    <h1>Bienvenue parmi nous !</h1>
+    <h1>Blog</h1>
 </body>
 
 </html>

@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -52,7 +48,7 @@ session_start();
                     $sql = $bdd->prepare("INSERT INTO utilisateur (nom, prenom, email, mdp) VALUES (?,?,?,?)"); //prepare ta requête
                     $sql->execute(array($nom, $prenom, $email, $emdp));
 
-                    header("Refresh: 5; url=connexion.php");
+                    header("Refresh: 3; url=connexion.php");
                     echo "<p>Vous vous êtes enregistré avec succès !<br/>
                     Vous allez maintenant être redirigé vers la page de connexion<p>";
 

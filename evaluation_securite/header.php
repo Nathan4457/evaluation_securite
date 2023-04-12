@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -11,12 +11,17 @@
     <title>Header</title>
 </head>
 
-<body>
     <header>
         <a href="index.php" id="index"><img src="./assets/accueil.png" alt="logo_accueil.png"></a>
-        <a href="inscription.php">Inscription</a>
-        <a href="connexion.php">Connexion</a>
-    </header>
-</body>
+    <?php
+    if (isset($_SESSION['connecte']) && $_SESSION['connecte'] == true){
+        echo '<a href="deconnecte.php">Déconnexion</a>';
+        echo '<a href="blog.php">Blog</a>';
 
-</html>
+        
+    } else{
+        echo '<a href="inscription.php">Inscription</a>';
+        echo '<a href="connexion.php">Connexion</a>';
+    }
+    ?>
+    </header>
