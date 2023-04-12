@@ -1,6 +1,10 @@
 <?php
 
 require("header.php");
+
+if (!isset($_SESSION['connecte']) && $_SESSION['connecte'] == false) {
+    header("location:index.php");
+}
 require("configconnexion.php");
 
 $sql = "SELECT * FROM blog";
@@ -12,7 +16,6 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/formulaire.css">
     <title>Blog</title>
 </head>
 <body>

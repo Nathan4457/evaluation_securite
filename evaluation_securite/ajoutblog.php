@@ -1,6 +1,11 @@
 <?php
 require("header.php");
 
+if (!isset($_SESSION['connecte']) && $_SESSION['connecte'] == false) {
+    header("location:index.php");
+}
+
+
 if (isset($_REQUEST['publier'])) {
 
     require("configconnexion.php");
@@ -8,13 +13,13 @@ if (isset($_REQUEST['publier'])) {
     $description = $_POST["description"];
     $image = $_FILES["photo"]["name"];
     $image_tmp = $_FILES["photo"]["tmp_name"];
-                $sql = "INSERT INTO blog (titre, `description`, `photo`) VALUES (?, ?, ?)";
-                $stmt = $bdd->prepare($sql);
-                $stmt->execute([$titre, $description, $image]);
-                header("Location: blog.php");
-                exit();
-            }
-    
+    $sql = "INSERT INTO blog (titre, `description`, `photo`) VALUES (?, ?, ?)";
+    $stmt = $bdd->prepare($sql);
+    $stmt->execute([$titre, $description, $image]);
+    header("Location: blog.php");
+    exit();
+}
+
 
 
 ?>
