@@ -15,7 +15,7 @@ Etapes pour installer les fichiers :
 5. Dans l'éditeur de code, ouvrir le dossier qui contient le code source
 6. Lancer l'émulateur PHP
 7. Dans le navigateur, se rendre à l'adresse suivante : http://localhost/phpmyadmin/
-9. Faire connexion directement puis cliquer sur "importer", "parcourir", choisir le fichier SQL puis faire "enregistrer" en bas de la page. Vous devriez voir la base de données apparaître.
+9. Faire "connexion" directement puis cliquer sur "importer", "parcourir", choisir le fichier SQL puis faire "enregistrer" en bas de la page. Vous devriez voir la base de données apparaître.
 8. Entrer localhost/ suivi du nom du dossier où se trouve le dossier "evaluation_securite"
 9. Cliquer sur le dossier "evaluation_securite" et vous devriez être sur le site 
 
